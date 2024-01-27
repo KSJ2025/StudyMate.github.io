@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>klsvdit.edu.in</title>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+            @media only screen and (max-width: 600px) {
+            }
+            @media only screen and (min-width: 601px) and (max-width: 1024px) {
+            }
+            @media only screen and (min-width: 1025px) {
+            }
+            .button1{
+            background: linear-gradient(to top, #d4145a,#fbb03b);
+            color: azure;
+            text-decoration: wavy;
+            text-align: left;
+            cursor: pointer;
+            padding: 4px 20px;
+            border-radius: 5px;
+            margin: 5px;
+            }
+            .button2{
+            background: linear-gradient(to top left, #2e3192,#1bffff);
+            color: azure;
+            text-decoration: wavy;
+            text-align: left;
+            cursor: pointer;
+            padding: 4px 20px;
+            border-radius: 5px;
+            margin: 5px;
+            }
+            .button3{
+            background: linear-gradient(to top left, #009245,#fcee21);
+            color: azure;
+            text-decoration: wavy;
+            text-align: left;
+            cursor: pointer;
+            padding: 4px 20px;
+            border-radius: 5px;
+            margin: 5px;
+            }
+            .button4{
+            background: linear-gradient(to top left,blue,purple);
+
+            text-decoration: wavy;
+            text-align: left;
+            cursor: pointer;
+            padding: 4px 20px;
+            border-radius: 5px;
+            margin: 5px;
+            }
+            .container {
+            display: flex;
+            justify-content:space-evenly;
+            }
+            nav {
+            background-color: #727272d8;
+            overflow: hidden;
+            border-radius: 5px;
+            text-align: center;
+            justify-content: center;
+            display: inline-flex;
+            width: 100%;
+            }
+            nav a {
+            display:inline-block;
+            color: #fff;
+            text-align: center;
+            padding: 15px 16px;
+            text-decoration: none;
+            }
+            .dropdown {
+            justify-content: center;
+            overflow: hidden;
+            }
+            .dropdown button {
+            font-size: 18px;
+            border: none;
+            outline: none;
+            color: white;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            padding: 15px 16px;
+            background-color: inherit;
+            margin: 0;
+            }
+            .dropdown-content {
+            display:none;
+            position: absolute;
+            background-color:rgb(202, 202, 202);
+            min-width: 100px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            }
+            .dropdown-content a {
+            float: none;
+            color: #333;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+            }
+            .dropdown-content a:hover {
+            background-color: #ddd;
+            }
+            .dropdown:hover .dropdown-content {
+            display:inline-flex;
+            }
+            .sub-dropdown{
+            position: relative;
+            display: block;
+            }
+            .sub-dropdown button {
+            font-size: 16px;
+            border: none;
+            outline: none;
+            color: #e21515;
+            padding: 16px 16px;
+            background-color: inherit;
+            margin: 0;
+            cursor: pointer;
+            }
+            .sub-dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #e79d9d;
+            min-width: 160px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            top: 100%;
+            left: 0;
+            }
+            .sub-dropdown:hover .sub-dropdown-content {
+            display:inline-flex;
+            }
+            .dropdown2{
+            overflow: hidden;
+            justify-content: center;
+            }
+            .dropdown2 button {
+            font-size: 18px;
+            border: none;
+            outline: none;
+            color: white;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            padding: 14px 16px;
+            background-color: inherit;
+            margin: 0;
+            }
+            .dropdown2-content {
+            display: none;
+            position: absolute;
+            background-color: rgb(202, 202, 202);
+            min-width: 160px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            }
+            .dropdown2-content a {
+            color: #333;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+            }
+            .dropdown2-content a:hover {
+            background-color: #ddd;
+            }
+            .dropdown2:hover .dropdown2-content {
+            display: block;
+            }
+            .image-container {
+            position: relative;
+            width: 100%; /* Adjust the width as needed */
+            }
+            .image-container img {
+            width: 100%;
+            height: 750px;
+            display: block;
+            }
+            .gradient-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom left,#6a3093,#a044ff);
+            opacity:.4;
+            }
+            .overlay-content {
+            position: absolute;
+            top: 50%;
+            left: 25%;
+            transform: translate(-50%, 50%);
+            color: #fff;
+            text-align: left;
+            font-size:25px
+            }
+            .box{
+            display: inline-flex;
+            flex-direction: column;
+            width: 500px;
+            border: 0px solid rgb(0, 0, 0);
+            align-items: center;
+            background: linear-gradient(to bottom left,rgb(15, 15, 209),red);
+            text-align: center;
+            border-radius: 15px;
+            padding: 20px;
+            color: white;
+            }
+            .box3{
+            display: inline-block;
+            flex-direction: column;
+            width: 1095px;
+            margin-inline-start: auto;
+            border: 1px solid rgb(151, 149, 149);
+            align-items: center;
+            background-color: rgb(196, 196, 196);
+            text-align:left;
+            border-radius: 3px;
+            padding:5px;
+            color: rgb(39, 38, 38);
+            }
+            .box4{
+            display: inline-block;
+            flex-direction: column;
+            width: 600px;
+            margin-inline-start: auto;
+            border: 0px solid rgb(0, 0, 0);
+            align-items: center;
+            background: linear-gradient(to top left,#ee9ca7,#ffdde1);
+            text-align:center;
+            border-radius: 10px;
+            padding:5px;
+            color: rgb(39, 38, 38);
+            }
+            .roundi{
+            border-radius: 10%;
+            }
+            .roundi2{
+            border-radius: 50%;
+            }
+            .roundi3{
+            border-radius: 50%;
+            background: linear-gradient(to bottom right,yellow,blue);
+            display: inline-block;
+            justify-content: center;
+            height: 150px;
+            width: 170px;
+            }
+            .box5{
+            display:inline-flex;
+            flex-direction: column;
+            width: 400px;
+            margin-inline-start: auto;
+            border: 0px solid rgb(0, 0, 0);
+            align-items: center;
+            background-color: rgb(146, 144, 144);
+            border-radius:12px;
+            padding:10px;
+            color: rgb(255, 255, 255);
+            }
+            .box6{
+            display:inline-flex;
+            flex-direction: column;
+            height:350px;
+            width: 400px;
+            margin-inline-start: auto;
+            border: 2px solid rgb(202, 202, 202);
+            align-items: center;
+            background-color: rgb(185, 184, 184);
+            border-radius:1px;
+            padding:10px;
+            color: rgb(0, 0, 0);
+            }
+    </style>
+    </head>
+    <body style="background-color: rgba(209, 206, 206, 0.884)">
+        &nbsp&nbsp
+            <div style="text-align: center;">
+                <a href="KLS.html" class="button2">HOME</a>
+                <a href="my.html" class="button2">ABOUT_US</a>
+                <a href="register.html" class="button3">REGISTER</a>
+                <a href="login.html" class="button1">LOGIN</a>
+                            </div>
+            <br>
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        <div class="container">
+            <div style="text-align: center;">
+            <a href="https://vtu.ac.in/en/"><img src="/static/vtu.webp" alt="Left Image" height="115px" width="200px" style="border-radius: 9px;"></a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+            <a href="https://youtu.be/NUYvbT6vTPs?si=u9FNY2AJmN-ApfLw"><img src="/static/LOGO-1-300x194.jpg" alt="Right Image" height="115px" width="200px" style="border-radius: 9px;"></a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+            <a href="https://klsvdit.edu.in/"><img src="/static/images (11).png" alt="Mid Image" height="115px" width="200px" style="border-radius: 9px;"></a>
+            </div>
+          </div>
+        <br>
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        <nav>
+            <div class="dropdown">
+              <button>&nbsp&nbsp&nbsp&nbsp&nbspDepartments</button>
+              <div class="dropdown-content">
+                <div>
+                <a href="#">UG</a>
+                <div class="sub-dropdown">
+                  <button> ▾ </button>
+                  <div class="sub-dropdown-content">
+                    <a href="https://klsvdit.edu.in/electronics-and-communication-engineering/">Electronics and Communication Engineering</a>
+                    <a href="https://klsvdit.edu.in/civil-engineering-2/">Civil Engineering</a>
+                    <a href="https://klsvdit.edu.in/computer-science-and-engineering-2/">Computer Science Engineering</a>
+                    <a href="https://klsvdit.edu.in/computer-science-and-engineering-ai-ml/">Computer Science Engineering[AI & ML]</a>
+                    <a href="https://klsvdit.edu.in/electrical-and-electronics-engineering/">Electrical and Electronics Engineering</a>
+                    <a href="https://klsvdit.edu.in/mechanical-engineering/">Mechanical Engineering</a>
+                    <a href="https://klsvdit.edu.in/department-of-mathematics/">Basic Science</a>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <a href="#">PG</a>
+                <div class="sub-dropdown">
+                  <button>▾</button>
+                  <div class="sub-dropdown-content">
+                    <a href="https://klsvdit.edu.in/industrial-electronics-2/">Industrial Electronics</a>
+                    <a href="https://klsvdit.edu.in/thermal-engineering/">Thermal Power Engineering</a>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <a href="#">Ph.D</a>
+                <div class="sub-dropdown">
+                  <button>▾</button>
+                  <div class="sub-dropdown-content">
+                    <a href="https://klsvdit.edu.in/research-development-and-innovation-2/">Department of Electronics and Communication Engineering</a>
+                    <a href="https://klsvdit.edu.in/research-development-and-innovation-mechanical/">Department of Mechanical Engineering</a>
+                    <a href="https://klsvdit.edu.in/research-development-and-innovation-physics/">Department of Physics</a>
+                    <a href="https://klsvdit.edu.in/research-development-and-innovation-chemistry/">Department of Chemistry</a>
+                    <a href="https://klsvdit.edu.in/department-of-mathematics-2/">Department of Mathematics</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div style="font-family:Verdana, Geneva, Tahoma, sans-serif; color: white; font-size: 18px;">
+          <a href="https://klsvdit.edu.in/training-and-placement-cell/">Placements</a>
+          <a href="https://klsvdit.edu.in/campus-2/">Campus</a>
+          <a href="https://klsvdit.edu.in/faculty-recruitment-3/">Faculty Recruitment</a>
+        </div>
+          <div class="dropdown2">
+            <button>Consultancy Service</button>
+            <div class="dropdown2-content">
+              <a href="https://klsvdit.edu.in/civil-engineering-consultancy-2/">Civil Engineering Consultancy</a>
+              <a href="https://klsvdit.edu.in/vibration-thermography-monitoring/">Vibration and Thermography Monitoring</a>
+            </div>
+          </div>
+            <div class="dropdown2">
+                <button>NAAC/IQAC</button>
+                <div class="dropdown2-content">
+                  <a href="https://klsvdit.edu.in/national-assessment-and-accreditation-council-naac/">NAAC</a>
+                  <a href="https://klsvdit.edu.in/25626-2/">IQAC</a>
+                  <a href="https://klsvdit.edu.in/feedback">FEEDBACK</a>
+            </div>
+          </div>
+        </nav>
+          &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+          <div class="image-container">
+            <img src="/static/images - 2023-12-10T194622.627.jpeg" alt="Your Image Description">
+            <div class="gradient-overlay"></div>
+            <div class="overlay-content">
+              <h1>Transforming Through
+                <br>Technology
+              </h1>
+            </div>
+          </div>
+          &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+          <div style="text-align: center;">
+            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+          <div>
+            <div class="box">
+            <div style="font-family: Verdana, Geneva, Tahoma, sans-serif;">
+              <h3>-- VISION --</h3>
+              <img src="/static/1063226.png" class="roundi" width="100" height="100">
+            </div>
+            <div style="font-family: Verdana, Geneva, Tahoma, sans-serif;">
+            <p><h3>To nurture talent and enrich society through excellence in technical education, research and innovation</h3>
+
+            </p>
+            </div>
+          </div>
+          &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+          <div class="box">
+            <div style="font-family: Verdana, Geneva, Tahoma, sans-serif;">
+              <h3>-- MISSION --</h3>
+              <img src="/static/1702364730243.png" class="roundi" width="100" height="100">
+            </div>
+            <div style="font-family: Verdana, Geneva, Tahoma, sans-serif;">
+            <p>
+              1. To augment innovative Pedagogy, kindle quest for interdisciplinary learning & to enhance conceptual understanding.
+              <br>
+              <br>
+              2. To build competence,professional ethics & develop entrepreneurial thinking.
+              <br>
+              <br>
+              3. To strengthen Industry Institute Partnership & explore global collaborations.
+              <br>
+              <br>
+              4. To inculcate culture of socially responsible citizenship.
+              <br>
+              <br>
+              5. To focus on Holistic & Sustainable development.</p>
+              </div>
+              <br>
+          </div>
+          </div>
+        </div>
+          <br>
+          <br>
+          <br>
+          <h2 style="font-family: Verdana, Geneva, Tahoma, sans-serif; color: rgb(233, 77, 16); text-align: center;">-- ABOUT KLS VDIT --</h2>
+          &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+          <div style="text-align: center;">
+          <div class="box3">
+            <div style="text-align: center">
+            <img src="/static/images - 2023-12-10T194622.627.jpeg" alt="KLS_VDIT" height="200px" width="300px" style="border-radius: 9px;">
+            </div>
+            <div style="font-family: sans-serif; font-size:large;">
+             <p>
+              ♦ <b>More</b> than three-quarters of a century ago, many eminent lawyers and visionaries from the North Karnataka region, who also happened &nbsp&nbsp to be leading lights in the Freedom Struggle, looked far ahead and decided that making legal education accessible to citizens of North &nbsp&nbsp&nbsp Karnataka was a worthy goal, whatever the difficulty.
+              Thus six eminent lawyers - <br>
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 1. N. S. Shrikhande <br>
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 2. V.A. Naik <br>
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 3. V. D. Belvi <br>
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 4. B. N. Datar <br>
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 5. S. N. Angadi. R. Kotbagi <br>
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 6. D. S. Paramaj <br>
+              &nbsp&nbsp came together to form the Karnatak Law Society in 1939 in Belagavi. <br> <br>
+              ♦ Shrimant Raja Lakhamgouda Sardesai of Vantmuri trusted these Founder Members to be true to their vision and a Promissory Note &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp totaling Rs. 1 Lakh was executed by him to support the application for opening a new Law College. <br><br>
+              ♦ Many of these founder members, and other legal scholars from this region volunteered to teach at this College despite their lucrative &nbsp &nbsp &nbsp&nbsp practice, and extensive personal and social commitments.
+              Belagavi thus became a renowned education centre for Law education. <br><br>
+              ♦ Students from Andhra Pradesh, Kerala and Maharashtra took admission and proved to be active in social, political & judicial fields. &nbsp &nbsp &nbsp &nbsp &nbsp &nbspThe first batch of Raja Lakhamgouda College started operating in 1939, graduated in 1941. <br><br>
+              ♦ Since then, more than 7500 students have passed through the hallowed portals of this esteemed institution. A few notables among the &nbsp &nbsp&nbsp many luminaries that this college has produced include - <br>
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 1. Shri. E. S. Venkataramiah-Former Chief Justice of India <br>
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 2. Shri. S. Rajendra Babu-Former Chief Justice of India & Chairman, National Human Rights Commission <br>
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 3. Shri. K. K. Venugopal-Present Attorney General of India. <br><br>
+              ♦ Today, Karnatak Law Society (KLS) has the distinction of running schools, and colleges in the fields of Law, Commerce, Engineering & &nbsp &nbsp &nbsp Management Education and all its Institutions have earned reputation of being as leading institutions in Karnataka.
+              <br>
+              <br>
+              ♦ Vishwanathrao Deshpande Institute of Technology is a premier Institute, established in 2004. It is located in Haliyal, Karnataka. A &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp leading institute in the city offers 8 courses of Degree in Full Time mode. <br><br>
+              ♦ Vishwanathrao Deshpande Institute of Technology is a well-known institution for a range of 6 UG courses. Institute enjoys a good &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp reputation for courses like M.E./M.Tech, B.E. / B.Tech in the streams of Engineering Students can opt courses from these. <br><br>
+              ♦ Vishwanathrao Deshpande Institute of Technology offers its students to gain professional expertize through its trained & experienced &nbsp &nbsp &nbsp&nbspfaculty in studies of - <br>
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp • Electronics & Communication Engineering <br>
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp • Electrical & Electronics Engineering <br>
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp • Mechanical Engineering <br>
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp • Civil Engineering <br>
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp • Computer Science Engineering <br>
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp • Computer Science Engineering[AI ML] <br><br>
+              ♦ Vishwanathrao Deshpande Institute of Technology also has it's courses approved by prestigious approving bodies like AICTE. Most &nbsp &nbsp &nbsp &nbsp &nbsp importantly, these courses with 456 seats are imparted at affordable fees, which increase accessibility and allow students to gain &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp knowledge and skills in their chosen field. <br><br>
+              ♦ For students institute has facilities & infrastructure like - <br>
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp • Auditorium <br>
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp • Boys Hostel <br>
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp • Cafeteria <br>
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp • Girls Hostel <br>
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp • Gym <br>
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp • Hospital/ Medical Facilities <br>
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp • Hostel <br>
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp • Labs <br>
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp • Library <br>
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp • Sports Complex  <br>
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp • Wi-Fi Campus <br><br>
+              ♦ The Institute has 4 hostels facility with capacity of 631 students Institute provides 40 labs facilities for the students Institute has 1 well &nbsp &nbsp &nbsp &nbsp&nbsp equipped library with 40741 books 84 Journals
+            </p>
+            </div>
+          </div>
+        </div>
+          <br>
+          <br>
+          <br>
+          &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+          <div style="text-align: center;">
+          <div class="box4">
+            <div>
+              <br>
+              <h2 style="color: black; font-family:'Times New Roman', Times, serif;">&nbsp&nbsp&nbsp Principal Message:</h2>
+              <div>
+                <div style="text-align: center; font-family: monospace; font-size: large;"><p>"I welcome you all to an outstanding learning community where everyone is dedicated to a high standard of excellence. We truly have a fantastic school with a supportive and involved parent community, dedicated and highly skillful staff, excellent resources and buildings and the most fantastic students to work with."</p>
+                &nbsp&nbsp&nbsp&nbsp
+              <img src="/static/Dr.-V.A.Kulkarni.jpg" alt="Principal" class="roundi2" width="150" height="150">
+              <p><h4>Dr. Vadiraj A. Kulkarni M.Tech, Ph.D.</h4></p>
+              <p>   Established in 2004, with intention of imparting quality engineering education, our institute has been a hub of many activities of excellence and achievements both by students and staff. We are committed to provide better academic ambience and strive for multifaceted development of students. The website would provide an effective platform to showcase all such details.
+                We are sure that, VDIT will reach newer heights in the days to come with cooperation from all stakeholders.
+                I wish the students a comfortable stay in the campus and colorful future</p>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+          <br>
+          <br>
+          <br>
+          <h2 style="font-family: Verdana, Geneva, Tahoma, sans-serif; color: rgb(233, 77, 16); text-align: center;">-- EXPLORE KLS VDIT --</h2>
+          <div style="text-align: center;">
+              <div class="box5">
+              <div class="button4"><a href="https://klsvdit.edu.in/campus-2" style="text-decoration: none; color: rgb(255, 255, 255);">CAMPUS →</a></div>
+                <br>
+                <div>
+                  <img src="/static/campus.jpg" alt="Campus" height="200" width="390">
+                </div>
+                </div>
+                &nbsp
+              <div class="box5">
+              <div class="button4"><a href="https://klsvdit.edu.in/admission/" style="text-decoration: none; color: rgb(255, 255, 255);">ADMISSION →</a></div>
+                <br>
+                <div>
+                  <img src="/static/admis.jpg" alt="Campus" height="200" width="390">
+                </div>
+                </div>
+                &nbsp
+              <div class="box5">
+              <div class="button4"><a href="https://klsvdit.irins.org/home" style="text-decoration: none; color: rgb(255, 255, 255);">TEAM →</a></div>
+                <div>
+                <br>
+                <img src="/static/team.jpg" alt="Campus" height="200" width="390">
+              </div>
+              </div>
+              &nbsp
+              <br>
+              <br>
+              <div class="box5">
+                <div class="button4"><a href="" style="text-decoration: none; color: rgb(255, 255, 255);">SPORTS →</a></div>
+                  <br>
+                  <div>
+                    <img src="/static/sports.jpg" alt="Campus" height="200" width="390">
+                  </div>
+                  </div>
+                  &nbsp
+                <div class="box5">
+                <div class="button4"><a href="https://klsvdit.edu.in/cultural-activities/" style="text-decoration: none; color: rgb(255, 255, 255);">CULTURE →</a></div>
+                  <br>
+                  <div>
+                    <img src="/static/cult.jpg" alt="Campus" height="200" width="390">
+                  </div>
+                  </div>
+                  &nbsp
+                <div class="box5">
+                <div class="button4"><a href="https://klsvdit.edu.in/events-2/" style="text-decoration: none; color: rgb(255, 255, 255);">EVENTS →</a></div>
+                  <div>
+                  <br>
+                  <img src="/static/eve.jpg" alt="Campus" height="200" width="390">
+                </div>
+                </div>
+              </div>
+                <br>
+                <br>
+                <h2 style="font-family: Verdana, Geneva, Tahoma, sans-serif; color: rgb(233, 77, 16); text-align: center;">-- DEPARTMENTS --</h2>
+                &nbsp&nbsp&nbsp&nbsp&nbsp
+                <div style="text-align: center;">
+                <div class="box6" style="font-family: Verdana, Geneva, Tahoma, sans-serif;">
+                  <div style="font-family: Verdana, Geneva, Tahoma, sans-serif;"><p><h3>Engineering - Undergraduate</h3></p></div>
+                  <div><img src="/static/1702788661946.png" alt="UG" class="roundi" width="100" height="100"></div>
+                  <marquee behavior="scroll" direction="up" scrollamount="4" target="_blank">
+                    <a href="https://klsvdit.edu.in/electronics-and-communication-engineering/" style="text-decoration: none;">Electronics and Communication Engineering →</a><br><br>
+                    <a href="https://klsvdit.edu.in/civil-engineering-2/" style="text-decoration: none;">Civil Engineering →</a><br><br>
+                    <a href="https://klsvdit.edu.in/computer-science-and-engineering-2/" style="text-decoration: none;">Computer Science Engineering →</a><br><br>
+                    <a href="https://klsvdit.edu.in/computer-science-and-engineering-ai-ml/" style="text-decoration: none;">Computer Science Engineering →[AI & ML]</a><br><br>
+                    <a href="https://klsvdit.edu.in/electrical-and-electronics-engineering/" style="text-decoration: none;">Electrical and Electronics Engineering →</a><br><br>
+                    <a href="https://klsvdit.edu.in/mechanical-engineering/" style="text-decoration: none;">Mechanical Engineering →</a><br><br>
+                  </marquee>
+                </div>
+                <div class="box6" style="font-family: Verdana, Geneva, Tahoma, sans-serif;">
+                  <div style="font-family: Verdana, Geneva, Tahoma, sans-serif;"><p><h3>Engineering - Postgraduate</h3></p></div>
+                  <div><img src="/static/1702788661919.png" alt="PG" class="roundi" width="100px" height="100px"></div>
+                  <marquee behavior="scroll" direction="up"scrollamount="4" target="_blank">
+                    <a href="https://klsvdit.edu.in/industrial-electronics-2/" style="text-decoration: none;">Industrial Electronics →</a><br><br>
+                    <a href="https://klsvdit.edu.in/thermal-engineering/" style="text-decoration: none;">Thermal Power Engineering →</a><br><br>
+                    <a href=""></a><br><br>
+                    <a href=""></a><br><br>
+                    <a href=""></a><br><br>
+                  </marquee>
+                </div>
+                <div class="box6" style="font-family: Verdana, Geneva, Tahoma, sans-serif;">
+                  <div style="font-family: Verdana, Geneva, Tahoma, sans-serif;"><p><h3>Research - Ph.D.</h3></p></div>
+                  <div><img src="/static/1702788661893.png" alt="Ph.D" class="roundi" width="100" height="80"></div>
+                  <marquee behavior="scroll" direction="up"scrollamount="4" target="_blank">
+                    <a href="https://klsvdit.edu.in/research-development-and-innovation-2/" style="text-decoration: none;">Dept of Electronics and Communication Engineering →</a><br><br>
+                    <a href="https://klsvdit.edu.in/research-development-and-innovation-mechanical/" style="text-decoration: none;">Department of Mechanical Engineering →</a><br><br>
+                    <a href="https://klsvdit.edu.in/research-development-and-innovation-physics/" style="text-decoration: none;">Department of Physics →</a><br><br>
+                    <a href="https://klsvdit.edu.in/research-development-and-innovation-chemistry/" style="text-decoration: none;">Department of Chemistry →</a><br><br>
+                    <a href="https://klsvdit.edu.in/department-of-mathematics-2/" style="text-decoration: none;">Department of Mathematics →</a><br><br>
+                  </marquee>
+                </div>
+              </div>
+                <br>
+                <h2 style="font-family: Verdana, Geneva, Tahoma, sans-serif; color: rgb(233, 77, 16); text-align: center;">-- OTHERS --</h2>
+                <br>
+                <div style="text-align: center;">
+                  <div class="roundi3">
+                    <br>
+                    <img src="/static/1702797366590.png" alt="NAIN" width="90" height="90">
+                    <br>
+                    <a href="https://klsvdit.edu.in/k-tech-nain-center/" style="text-decoration: none; text-align: center; color: white;">NAIN</a>
+                  </div>
+                  <br>
+                  <div  class="roundi3">
+                    <br>
+                    <img src="/static/1702799222956.png" alt="eyantra" width="90" height="90">
+                    <br>
+                    <a href="https://klsvdit.edu.in/e-yantra-2/" style="text-decoration: none; text-align: center; color: white;">E-YANTRA</a>
+                  </div>
+                  &nbsp
+                  <div  class="roundi3">
+                    <br>
+                    <img src="/static/1702797366560.png" alt="" width="90" height="90">
+                    <br>
+                    <a href="https://klsvdit.edu.in/iit-b-spoken-tutorial-2/" style="text-decoration: none; text-align: center; color: white;">IIT-BOMBAY_ST</a>
+                  </div>
+                  <br>
+                  <div  class="roundi3">
+                    <br>
+                    <img src="/static/1702797366574.png" alt="" width="90" height="90">
+                    <br>
+                    <a href="https://klsvdit.edu.in/nptel-l-c-2/" style="text-decoration: none; text-align: center; color: white;">NP-TEL</a>
+                  </div>
+                  &nbsp
+                  <div  class="roundi3">
+                    <br>
+                    <img src="/static/1702797366529.png" alt="" width="90" height="90">
+                    <br>
+                    <a href="https://klsvdit.edu.in/kctu/" style="text-decoration: none; text-align: center; color: white;">WELDING_RC</a>
+                  </div>
+                  &nbsp
+                  <div  class="roundi3">
+                    <br>
+                    <img src="/static/1702797366606.png" alt="" width="90" height="90">
+                    <br>
+                    <a href="https://klsvdit.edu.in/karunalu-ba-belake-air-programme/" style="text-decoration: none; text-align: center; color: white;">AIR</a>
+                  </div>
+                </div>
+                <br><br><br>
+                <div><P style="text-align: center; font-family: Verdana, Geneva, Tahoma, sans-serif; font-size:large">--♦-♦-♦-♦-♦-♦-♦--</P></div>'
+                <br><br>
+                <nav>
+                  <div style="text-align: justify;">
+                    <div style="text-align: center;">
+                    <a href="https://www.facebook.com/klsvdrit.haliyal.9"><img src="/static/1702799222982.png" alt="fb" class="roundi" width="40" height="40"></a>
+                    &nbsp
+                    <a href="https://www.instagram.com/klsvdit/"><img src="/static/1702799222969.png" alt="ig" class="roundi" width="40" height="40"></a>
+                    &nbsp
+                    <a href="https://www.linkedin.com/in/klsvdit-haliyal"><img src="/static/1702799222994.png" alt="li" class="roundi" width="40" height="40"></a>
+                    </div>
+                  <div style="text-align: end;">
+                  <p style="font-family: monospace; font-size: larger ;"> Copyright © 2023 StudyMate & Designed by VKRMS Team &nbsp&nbsp
+                  </p>
+                </div>
+                </div>
+                </nav>
+</body>
